@@ -653,78 +653,55 @@
   </div>
 
   <!-- PAINEL FORMULÁRIO -->
-  <div class="panel" id="panel-form">
-    <div class="form-intro">
-      <span class="form-eyebrow">— fale com a gente</span>
-      <h2>Tem alguma dúvida?</h2>
-      <p>Não encontrou o que procurava? Mande sua pergunta — nossa equipe responde em breve!</p>
+	<!-- FORMULÁRIO -->
+<div class="form-card">
+  <div class="form-intro">
+    <span class="form-eyebrow">ENVIE SUA DÚVIDA</span>
+    <h2>Central de Dúvidas ZapPG</h2>
+    <p>Preencha os dados abaixo para enviar sua pergunta.</p>
+  </div>
+
+  <form id="faq-form" action="https://formspree.io/f/SEU-CODIGO" method="POST">
+    
+    <div class="form-group">
+      <label>Nome Completo</label>
+      <input type="text" name="nome" placeholder="Seu nome completo" required>
     </div>
 
-    <div class="form-notice">
-      <div class="form-notice-title">⚠️ Atenção antes de enviar sua dúvida</div>
-      <p>Este formulário tem como objetivo exclusivo o <strong>aprimoramento da plataforma ZapPG Saúde</strong>. Por aqui, você pode tirar dúvidas sobre o funcionamento do sistema, reportar problemas técnicos ou enviar sugestões de melhoria.</p>
-      <p class="form-notice-subtitle">🚫 Não envie por este canal:</p>
-      <ul>
-        <li>📋 Informações sobre guias de encaminhamento ou consultas agendadas</li>
-        <li>🩺 Diagnósticos ou dados clínicos de qualquer natureza</li>
-        <li>🔒 Dados pessoais sensíveis como CPF, RG, cartão SUS ou endereço</li>
-      </ul>
-      <p><strong>🏥 Para assuntos relacionados à sua saúde ou situação na fila de espera, procure diretamente a sua Unidade de Saúde de referência ou vá até a Ouvidoria Municipal de Saúde:</strong></p>
-      <p>🕐 Atendimento ao público de segunda à sexta-feira das 08h às 17h, sem fechamento para o almoço<br>
-      📍 R. Afonso Pena, 87 – Estrela, Ponta Grossa – PR, 84040-170</p>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" name="email" placeholder="seu@email.com" required>
     </div>
 
-    <div class="form-card">
-
-      <!-- Formulário -->
-      <div id="form-body">
-        <div class="form-group">
-          <label>Seu nome</label>
-          <input type="text" id="f-nome" placeholder="Como podemos te chamar? (opcional)">
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" id="f-email" placeholder="Para onde enviamos a resposta (opcional)">
-        </div>
-        <div class="form-group">
-          <label>Assunto</label>
-          <select id="f-assunto">
-            <option value="">Selecione um assunto...</option>
-            <option>Acesso ao ZapPG</option>
-            <option>Cadastro / Atualização</option>
-            <option>Fila de espera</option>
-            <option>Problema técnico</option>
-            <option>Sugestão de melhoria</option>
-            <option>Outro</option>
-          </select>
-        </div>
-
-        <div class="form-divider"></div>
-
-        <div class="form-group">
-          <label>Sua dúvida *</label>
-          <textarea id="f-msg" placeholder="Descreva sua dúvida com detalhes..."></textarea>
-        </div>
-
-        <button class="submit-btn" id="submit-btn" onclick="submitForm()">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          Enviar pergunta
-        </button>
-
-        <div class="toast" id="toast-ok">✅ Pergunta enviada com sucesso! Obrigado pela contribuição.</div>
-        <div class="toast err" id="toast-err">❌ Erro ao enviar. Verifique sua internet e tente novamente.</div>
-        <div class="toast warn" id="toast-warn">⚠️ Formspree não configurado. Pergunta salva localmente.</div>
-      </div>
-
-      <!-- Estado de sucesso -->
-      <div class="form-success" id="form-success">
-        <div class="success-icon">✅</div>
-        <h3>Dúvida enviada!</h3>
-        <p>Recebemos sua mensagem e entraremos em contato em breve.</p>
-        <span class="reset-link" onclick="resetForm()">Enviar outra pergunta</span>
-      </div>
-
+    <!-- NOVOS CAMPOS -->
+    <div class="form-group">
+      <label>Unidade de Saúde</label>
+      <input type="text" name="unidade_saude" placeholder="Informe sua unidade de saúde" required>
     </div>
+
+    <div class="form-group">
+      <label>Função</label>
+      <input type="text" name="funcao" placeholder="Informe sua função (ex: Enfermeiro, Médico, Técnico...)" required>
+    </div>
+
+    <div class="form-group">
+      <label>Sua Dúvida</label>
+      <textarea name="duvida" placeholder="Escreva sua dúvida aqui..." required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      Enviar Dúvida
+    </button>
+  </form>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="form-success" id="success-message">
+    <div class="success-icon">✓</div>
+    <h3>Dúvida enviada com sucesso!</h3>
+    <p>Responderemos o mais breve possível.</p>
+  </div>
+</div>
 
     <div class="saved-section">
       <h4>Perguntas enviadas <span class="saved-count" id="saved-count">0</span></h4>
